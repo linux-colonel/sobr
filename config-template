@@ -1,0 +1,57 @@
+# All configuration variables go here.
+# This first section contains the basic variables.
+# These are required.
+# The variable $CONFIG may be referenced to specify the path to the local SOBR configuration directory.
+
+#***************REQUIRED VARIABLES*******************
+
+# The IP or hostname of the remote server
+REMOTE_SERVER=
+
+# The port on the REMOTE_SERVER on which sshd is running
+SSHD_PORT=
+
+# The remote user that the local account is authorized to connect to.
+SSH_USER=
+
+# The path to the ssh private key whose public key is installed on the remote
+# server in the home directory of SSH_USER
+SSH_IDENTITY=
+
+# The path to the truecrypt volume that contains the backed up files on $REMOTE_SERVER.
+# This file must be writeable by $SSH_USER.
+REMOTE_VOLUME_PATH=
+
+# This is the keyfile for the REMOTE_VOLUME_PATH.
+# It must be kept on the LOCAL machine.  DO NOT upload it to REMOTE_SERVER unless you want to defeat the point of the encryption.
+# It must NOT be readable by group or others.  The script checks this.
+# It should be a small file with random contents.
+# One way to generate it is $ dd if=/dev/urandom of=keyfile bs=1024 count=10 
+SECRET_FILE=
+
+# A file containing a list of paths (one per line) to back up from the LOCAL machine.
+# These paths are relative to / by default.  To change this, change the BASEDIR variable below.
+# The paths may include both files and folders.
+# Do not escape paths with special characters or spaces. 
+FILE_LIST=
+
+#******* Advanced variables *******************
+# If these are left blank, the indicated defaults are used.
+
+# The mount point for the truecrypt volume to be mounted on the LOCAL_MACHINE
+# The default is /mnt/sobr-fs
+LOCAL_MOUNTPOINT=
+
+# The folder in LOCAL_MOUNTPOINT to put the  backed up files in.
+# The default is 'backup'
+BACKUP_FOLDER=
+
+# Thei local mountpoint for the remote sshfs containing the truecrypt volume.
+# The default is /mnt/sobr-ssh-fs
+LOCAL_SSH_MOUNTPOINT=
+
+# The path that the paths in FILE_LIST are relative to (on the LOCAL machine).
+# The default is / .
+# This variable must end with / (or you must prepend everything in FILE_LIST with a /).
+BASEDIR=
+

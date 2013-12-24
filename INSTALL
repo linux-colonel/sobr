@@ -1,0 +1,17 @@
+Pre-requisites:
+truecrypt
+fuse
+sshfs
+rsync
+
+Configuration pre-requisites:
+The user that the scripts run under must have sudo priviledges to run the TrueCrypt binary as root.
+The user_allow_other option must be uncommented in /etc/fuse.conf
+
+Installation:
+1. Create a truecrypt volume with no password and a keyfile on the remote machine.
+2. Copy the config-template file to ~/.sobr/config .  It can be copied elsewhere if you run sobr with the -c option.
+3. Fill out the required variables in the config file.
+4. Set up passwordless SSH access to the remote machine.
+5. Install the sobr.sh, functions.sh, and default-vars files in a directory of your choosing.  They must reside in the same directory.
+

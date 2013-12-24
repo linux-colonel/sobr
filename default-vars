@@ -1,0 +1,6 @@
+# This file contains the default variables.  DO NOT MODIFY.
+DEFAULT_LOCAL_MOUNTPOINT=/mnt/sobr-fs
+DEFAULT_BACKUP_FOLDER=backup
+DEFAULT_LOCAL_SSH_MOUNTPOINT=/mnt/sobr-ssh-fs
+DEFAULT_BASEDIR=/
+

@@ -32,7 +32,7 @@ decrypt(){
 REMOTE_DIR=$(dirname "$REMOTE_VOLUME_PATH")
 TC_VOLUME=$LOCAL_SSH_MOUNTPOINT/$(basename "$REMOTE_VOLUME_PATH")
 
-sshfs "$SSH_USER"@"$REMOTE_SERVER":$REMOTE_DIR "$LOCAL_SSH_MOUNTPOINT" -C -p "$SSHD_PORT"  -o StrictHostKeyChecking=no -o allow_root
+sshfs "$SSH_USER"@"$REMOTE_SERVER":$REMOTE_DIR "$LOCAL_SSH_MOUNTPOINT" -C -p "$SSHD_PORT"  -o StrictHostKeyChecking=no -o allow_root -o reconnect -o workaround=all 
 truecrypt --text --non-interactive --keyfiles="$SECRET_FILE" $TC_VOLUME $LOCAL_MOUNTPOINT
 return $?
 }

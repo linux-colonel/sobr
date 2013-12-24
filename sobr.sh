@@ -9,6 +9,7 @@ CONFIG_FILE=~/.sobr/config
 . functions.sh
 . default-vars
 
+EXIT=0
 while getopts ":c:vhd" opt; do
 	case $opt in
 		c)
@@ -33,7 +34,7 @@ while getopts ":c:vhd" opt; do
 	esac
 done
 
-if [ $EXIT -eq 1 ]; then
+if [ "$EXIT" -eq 1 ]; then
 	exit 1
 fi
 
